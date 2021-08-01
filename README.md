@@ -8,7 +8,7 @@ Simple word-wrapped text component for React Native.
 
 ## 🚨 Requirements
 
-This module using **lookbehind regular expression**, you must enable hermes.
+This module using lookbehind regular expression, you **must enable hermes**.
 Hermes makes you using ESnext features.
 
 ```gradle
@@ -20,7 +20,7 @@ project.ext.react = [
 ```
 
 and run command in `/android/`
-```bash
+```sh
 ./gradlew clean
 ```
 
@@ -31,7 +31,7 @@ npm install react-native-word-wrap-text
 ```
 or
 ```sh
-yarn install react-native-word-wrap-text
+yarn add react-native-word-wrap-text
 ```
 
 ## Usage
