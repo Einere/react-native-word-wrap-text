@@ -1,6 +1,6 @@
 # react-native-word-wrap-text
 
-[!sample image](./asset/image/sample.png)
+![sample image](./asset/image/sample.png)
 
 Simple word-wrapped text component for React Native.
 
