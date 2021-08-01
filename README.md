@@ -1,26 +1,100 @@
 # react-native-word-wrap-text
 
-Simple word-wrapped text component for React Native
+Simple word-wrapped text component for React Native.
+
+## Features
+
+1. Support TypeScript
+
+## 🚨 Requirements
+
+This module using **lookbehind regular expression**, you must enable hermes.
+Hermes makes you using ESnext features.
+
+```gradle
+// /android/app.build.gradle
+
+project.ext.react = [
+    enableHermes: true,  // modify to true
+]
+```
+
+and run command in `/android/`
+```bash
+./gradlew clean
+```
 
 ## Installation
 
 ```sh
 npm install react-native-word-wrap-text
 ```
+or
+```sh
+yarn install react-native-word-wrap-text
+```
 
 ## Usage
 
-```js
-import WordWrapText from "react-native-word-wrap-text";
+```tsx
+import {Text, View} from 'react-native';
+import {
+  TextAndRendererList,
+  TextRenderer,
+  WordWrapText,
+} from 'react-native-word-wrap-text';
 
-// ...
+const renderPlainText: TextRenderer = (token, index) => {
+  return (
+    // it's important to assign key props to root component
+    <Text key={index} style={textStyle.plainText}>
+      {token}
+    </Text>
+  );
+};
+const renderPrimaryText: TextRenderer = (token, index) => {
+  return (
+    <Text key={index} style={textStyle.primaryText}>
+      {token}
+    </Text>
+  );
+};
+const renderBoldText: TextRenderer = (token, index) => {
+  return (
+    <Text key={index} style={textStyle.boldText}>
+      {token}
+    </Text>
+  );
+};
 
-const result = await WordWrapText.multiply(3, 7);
+// if use same renderer, merge to one string
+const textAndRendererList: TextAndRendererList = [
+  ['This library can easily customize. ', renderPlainText],
+  ['But now, no support ', renderPrimaryText],
+  ['\\n ', renderBoldText],
+  ['for_line_break. ', renderPrimaryText],
+  ['thank for using this library.', renderPlainText],
+];
+
+function SomeComponent (props) {
+  // ...
+
+  return (
+    <View>
+      <WordWrapText
+        textAndRenderList={textAndRendererList}
+        containerStyle={containerStyle.text}
+      />
+    </View>
+  );
+}
 ```
+
+## Props
 
 ## Contributing
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository.
 
 ## License
 
