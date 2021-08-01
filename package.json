@@ -1,6 +1,6 @@
 {
   "name": "react-native-word-wrap-text",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Simple word-wrapped text component for React Native",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
