@@ -6,10 +6,15 @@ Simple word-wrapped text component for React Native.
 
 1. Support TypeScript
 
+## Next Features
+
+1. line break by parsing `\n` in string
+
 ## 🚨 Requirements
 
 This module using lookbehind regular expression, you **must enable hermes**.
-Hermes makes you using ESnext features.
+Hermes makes you using ESnext features.  
+Enable hermes like below.
 
 ```gradle
 // /android/app.build.gradle
@@ -19,7 +24,7 @@ project.ext.react = [
 ]
 ```
 
-and run command in `/android/`
+and clean gradle by run command in `/android`
 ```sh
 ./gradlew clean
 ```
@@ -90,7 +95,22 @@ function SomeComponent (props) {
 }
 ```
 
-## Props
+## Props and Types
+
+### Props
+
+| Props             	| type                 	| note                            	                            	  |
+|-------------------	|----------------------	|------------------------------------------------------------------	|
+| textAndRenderList 	| TextAndRendererList  	|                                 	                            	  |
+| containerStyle    	| StyleProp\<ViewStyle\> 	| [View Style Props](https://reactnative.dev/docs/view-style-props) |
+
+### Types
+
+| Types               	| value                                       	| note                          	|
+|---------------------	|---------------------------------------------	|-------------------------------	|
+| TextRenderer        	| (token: string, index: number) => ReactNode 	| Similar to function component  	|
+| TextAndRenderer     	| [string, TextRenderer]                      	| string and TextRenderer tuple 	|
+| TextAndRendererList 	| TextAndRenderer[]                           	| 2D array                      	|
 
 ## Contributing
 
