@@ -95,6 +95,8 @@ function SomeComponent (props) {
 }
 ```
 
+> 🚨 You have to assign `key` prop to root component at TextRenderer
+
 ## Props and Types
 
 ### Props
