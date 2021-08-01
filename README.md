@@ -1,5 +1,7 @@
 # react-native-word-wrap-text
 
+[!sample image](./asset/image/sample.png)
+
 Simple word-wrapped text component for React Native.
 
 ## Features
@@ -12,7 +14,7 @@ Simple word-wrapped text component for React Native.
 
 ## Requirements
 
-> 🚨 This module using lookbehind regular expression, you **must enable hermes**. Hermes makes you using ESnext features.  
+> 🚨 This module using lookbehind regular expression, you **must enable hermes**. Hermes makes you using ESnext features.
 
 Enable hermes like below.
 
