@@ -10,10 +10,10 @@ Simple word-wrapped text component for React Native.
 
 1. line break by parsing `\n` in string
 
-## 🚨 Requirements
+## Requirements
 
-This module using lookbehind regular expression, you **must enable hermes**.
-Hermes makes you using ESnext features.  
+> 🚨 This module using lookbehind regular expression, you **must enable hermes**. Hermes makes you using ESnext features.  
+
 Enable hermes like below.
 
 ```gradle
