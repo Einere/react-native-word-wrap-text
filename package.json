@@ -97,7 +97,7 @@
       "type-enum": [
         2,
         "always",
-        ["env", "docs", "feat", "fix", "perf", "refactor", "revert", "style", "test"]
+        ["env", "docs", "feat", "fix", "perf", "refactor", "revert", "style", "test", "chore"]
       ]
     }
   },
