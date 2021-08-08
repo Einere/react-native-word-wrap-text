@@ -7,10 +7,11 @@ Simple word-wrapped text component for React Native.
 ## Features
 
 1. Support TypeScript
+2. Line-break using `\n` in text
 
 ## Next Features
 
-1. line break by parsing `\n` in string
+1. Remove unnecessary empty `TextRenderer`
 
 ## Requirements
 
@@ -76,11 +77,11 @@ const renderBoldText: TextRenderer = (token, index) => {
 
 // if use same renderer, merge to one string
 const textAndRendererList: TextAndRendererList = [
-  ['This library can easily customize. ', renderPlainText],
-  ['But now, no support ', renderPrimaryText],
+  ['This library is easily customizable. ', renderPlainText],
+  ['Now, it supports ', renderPrimaryText],
   ['\\n ', renderBoldText],
-  ['for_line_break. ', renderPrimaryText],
-  ['thank for using this library.', renderPlainText],
+  ['for line-break. ', renderPrimaryText],
+  ['thank for\nusing this library.', renderPlainText],
 ];
 
 function SomeComponent (props) {
