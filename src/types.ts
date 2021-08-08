@@ -6,7 +6,18 @@ export type TextAndRenderer = [string, TextRenderer];
 export type TextAndRendererList = TextAndRenderer[];
 export type TokensAndRenderer = [string[], TextRenderer];
 
+export type LineBreakParser = (
+  textAndRenderer: TextAndRenderer
+) => TextAndRenderer | TextAndRendererList;
+export type Grouper = (
+  acc: TextAndRendererList,
+  textOrRenderer: string | TextRenderer
+) => TextAndRendererList;
+export type WhiteSpateParser = (
+  textAndRenderer: TextAndRenderer
+) => TokensAndRenderer;
+
 export interface WordWrapTextProp {
-  textAndRenderList: TextAndRendererList;
+  textAndRendererList: TextAndRendererList;
   containerStyle: StyleProp<ViewStyle>;
 }
