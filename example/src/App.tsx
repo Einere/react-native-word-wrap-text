@@ -30,42 +30,36 @@ const renderBoldText: TextRenderer = (token, index) => {
 };
 const textAndRendererList1: TextAndRendererList = [
   [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    'Lorem ipsum\ndolor sit amet, consectetur adipiscing elit. ',
     renderPlainText,
   ],
   ['Donec vitae nisl magna. ', renderPrimaryText],
+  ['Nam eget metus ac neque tempus blandit. ', renderPlainText],
+  ['Maecenas finibus elit in gravida pretium. ', renderPrimaryText],
   [
-    'Nam eget metus ac neque tempus blandit. Maecenas finibus elit in gravida pretium. ',
+    'Nunc quis neque non nulla vulputate suscipit et sed orci. ',
     renderPlainText,
   ],
-  [
-    'Nunc quis neque non nulla vulputate suscipit et sed orci. Integer libero ante, ultricies sit amet nulla vitae, tincidunt egestas eros. ',
-    renderPrimaryText,
-  ],
-  ['Quisque aliquet fermentum nulla, et tempor libero. ', renderPlainText],
 ];
 
 const textAndRendererList2: TextAndRendererList = [
+  ['여름 장이란 애시당초에 글러서, 해는 아직 중천에 있건만', renderPlainText],
   [
-    '여름 장이란 애시당초에 글러서, 해는 아직 중천에 있건만 장판은 벌써 쓸쓸하고 더운 햇발이 벌여놓은 전 휘장 밑으로 등줄기를 훅훅 볶는다. ',
-    renderPlainText,
-  ],
-  [
-    '마을 사람들은 거의 돌아간 뒤요, 팔리지 못한 나무꾼패가 길거리에 궁깃거리고들 있으나, 석유병이나 받고 고깃마리나 사면 족할 이 축들을 바라고 언제까지든지 버티고 있을 법은 없다. ',
+    ' 장판은 벌써 쓸쓸하고 더운 햇발이 벌여놓은 전 휘장\n밑으로 등줄기를 훅훅 볶는다.',
     renderPrimaryText,
   ],
   [
-    '칩칩스럽게 날아드는 파리떼도 장난꾼 각다귀들도 귀찮다. 얽음뱅이요 왼손잡이인 드팀전의 허생원은 기어이 동업의 조선달을 나꾸어보았다.',
+    ' 마을 사람들은 거의 돌아간 뒤요, 팔리지 못한 나무꾼패가 길거리에 궁깃거리고들 있으나...',
     renderPlainText,
   ],
 ];
 
 const textAndRendererList3: TextAndRendererList = [
-  ['This library can easily customize. ', renderPlainText],
-  ['But now, no support ', renderPrimaryText],
+  ['This library is easily customizable. ', renderPlainText],
+  ['Now, it supports ', renderPrimaryText],
   ['\\n ', renderBoldText],
-  ['for_line_break. ', renderPrimaryText],
-  ['thank for using this library.', renderPlainText],
+  ['for line-break. ', renderPrimaryText],
+  ['thank for\nusing this library.', renderPlainText],
 ];
 
 export default function App() {
@@ -73,19 +67,19 @@ export default function App() {
     <View style={styles.container}>
       <Text>left align</Text>
       <WordWrapText
-        textAndRenderList={textAndRendererList1}
+        textAndRendererList={textAndRendererList1}
         containerStyle={containerStyle.text}
       />
       <View style={containerStyle.padding} />
       <Text>center align</Text>
       <WordWrapText
-        textAndRenderList={textAndRendererList2}
+        textAndRendererList={textAndRendererList2}
         containerStyle={[containerStyle.text, containerStyle.center]}
       />
       <View style={containerStyle.padding} />
       <Text>right align</Text>
       <WordWrapText
-        textAndRenderList={textAndRendererList3}
+        textAndRendererList={textAndRendererList3}
         containerStyle={[containerStyle.text, containerStyle.flexEnd]}
       />
     </View>
