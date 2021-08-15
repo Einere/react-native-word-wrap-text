@@ -104,9 +104,9 @@ function SomeComponent (props) {
 
 ### Props
 
-| Props             	| type                 	| note                            	                            	  |
-|-------------------	|----------------------	|------------------------------------------------------------------	|
-| textAndRenderList 	| TextAndRendererList  	|                                 	                            	  |
+| Props             	| type                 	  | note                            	                            	  |
+| ------------------	| ----------------------- | -----------------------------------------------------------------	|
+| textAndRenderList 	| TextAndRendererList  	  |                                 	                            	  |
 | containerStyle    	| StyleProp\<ViewStyle\> 	| [View Style Props](https://reactnative.dev/docs/view-style-props) |
 
 ### Types
