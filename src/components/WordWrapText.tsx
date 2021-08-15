@@ -15,6 +15,8 @@ const Separator: TextRenderer = (token, i) => {
 const isTextAndRenderListTruthy = ([text, renderer]: unknown[]) =>
   typeof text === 'string' && renderer instanceof Function;
 
+const isTextNotEmpty: (text: string) => boolean = (text) => text.length > 0;
+
 const parseLineBreak: LineBreakParser = ([text, renderer]) => {
   if (text.includes('\n')) {
     const regExp = new RegExp(/(\n)/);
@@ -59,7 +61,7 @@ export function WordWrapText(props: WordWrapTextProp) {
     .flat(2)
     .reduce(groupToTextAndRenderer, [])
     .map(parseWhiteSpace)
-    .map(([tokens, renderer]) => tokens.map(renderer));
+    .map(([tokens, renderer]) => tokens.filter(isTextNotEmpty).map(renderer));
 
   const composedContainerStyle = StyleSheet.flatten([
     _containerStyle.container,
